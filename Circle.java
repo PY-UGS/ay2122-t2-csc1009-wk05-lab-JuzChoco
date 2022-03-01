@@ -1,59 +1,13 @@
-import static java.lang.Math.pow;
-import static java.lang.Math.PI;
+package Week5_Qns2;
 
-public class Circle extends GeometricObject{
+public class Circle extends Shape {
     
-
-    private double radius;
-
-    public Circle(){
-
+    public Circle(double dim1, double dim2, double PI){
+        super(dim1, dim2, PI);
     }
 
-    public Circle(double radius){
-
-        this.radius = radius;
-    }
-
-    public Circle(double radius, String color, boolean filled){
-
-        super(color,filled);
-        this.radius = radius;
-    }
-
-    public double getRadius(){
-
-        return radius;
-    }
-
-    public void setRadius(double radius){
-
-        this.radius = radius;
-    }
-
-    public double getArea(){
-
-        double area = PI * pow(radius, 2);
+    public double area(){
+        double area = getPI() * getDim1() * getDim2(); //Need to use getPI() as we are calculating the area of a circle
         return area;
-    }
-
-    public double getPerimeter(){
-
-        double perimeter = 2 * PI * radius;
-        return perimeter;
-    }
-
-    public double getDiameter(){
-
-        double diameter = 2 * radius;
-        return diameter;
-    }
-
-    public void printCircle(){
-
-        System.out.println("The color is " + this.getColor());
-        System.out.println("The radius is " + this.radius);
-        System.out.println("The area is " + this.getArea());
-        System.out.println("The diameter is " + this.getDiameter());      
     }
 }
